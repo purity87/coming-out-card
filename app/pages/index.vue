@@ -1,51 +1,92 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-[#f7f3ef] px-4">
-    <!-- 종이 바닥 -->
-    <div class="relative w-full max-w-md aspect-[3/4]">
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-purple-100 to-purple-50 px-4 font-nanum">
+    <!-- 카드 -->
+    <div class="bg-white rounded-[2.5rem] shadow-2xl p-10 max-w-4xl w-full relative">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- 좌측: 초음파 + 심장소리 -->
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-gray-400 mb-4">이미지/사운드 준비중</p>
 
-      <!-- 뒤 종이 (레이어) -->
-      <div
-          class="absolute inset-0 bg-[#fffaf6] rounded-3xl shadow-md rotate-[-1.5deg]"
-      ></div>
+          <div v-if="ultrasoundSrc" class="mb-6">
+            <img
+                :src="ultrasoundSrc"
+                alt="초음파 사진"
+                class="w-64 rounded-2xl shadow"
+            />
+          </div>
 
-      <!-- 앞 종이 -->
-      <div
-          class="absolute inset-0 bg-[#fffdfb] rounded-3xl shadow-lg rotate-[1deg]"
-      ></div>
-
-      <!-- 중앙 입체 카드 -->
-      <div
-          class="relative z-10 bg-white rounded-2xl shadow-2xl px-8 py-10 text-center
-               top-1/2 -translate-y-1/2 mx-6"
-      >
-        <!-- 상단 아이콘 -->
-        <div class="text-5xl mb-4">👶🏻✨</div>
-
-        <!-- 메인 문구 -->
-        <h1 class="text-xl font-bold text-gray-800 mb-4 leading-relaxed">
-          할머니, 할아버지가 되신 것을<br />
-          축하드려요 💐
-        </h1>
-
-        <!-- 서브 문구 -->
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          우리 가족에게<br />
-          소중한 새 생명이 찾아왔어요.
-        </p>
-
-        <!-- 태명 강조 -->
-        <div class="bg-pink-50 rounded-xl py-4 mb-6">
-          <p class="text-sm text-gray-500 mb-1">태명</p>
-          <p class="text-2xl font-semibold text-pink-500">
-            블링이 ✨
-          </p>
+          <div v-if="hasHeartbeat" class="w-full">
+            <audio controls class="w-full">
+<!--              <source src="/heartbeat.mp3" type="audio/mpeg" />-->
+            </audio>
+          </div>
         </div>
 
-        <!-- 하단 -->
-        <p class="text-sm text-gray-500">
-          많이 사랑해 주세요 🤍
-        </p>
+        <!-- 우측: 블링이 + 멘트 -->
+        <div class="text-center">
+          <div class="mb-6">
+            <img
+                src="/bling-baby.png"
+                alt="블링이 이미지"
+                class="mx-auto w-56 h-56 object-contain rounded-full"
+                @error="onImageError"
+            />
+          </div>
+
+          <h1 class="text-2xl font-bold text-gray-800 mb-4 leading-relaxed rounded-lg">
+            안녕하세요!<br />
+            ❤️ 할아버지, 할머니 ❤️
+          </h1>
+
+          <p class="text-gray-600 mb-4 leading-relaxed rounded-lg">
+            저는
+            <span class="text-3xl font-bold text-purple-600">블링</span>이예요.
+          </p>
+
+          <p class="text-gray-600 mb-6 leading-relaxed rounded-lg">
+            무럭무럭 자라서<br />
+            우리 <span class="font-semibold text-xl">9월</span>에 만나요 💕
+          </p>
+
+          <div class="text-sm text-gray-400 leading-relaxed rounded-lg">
+            <p>보고 싶어요. 사랑해요♥️</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const ultrasoundSrc = ref<string | null>(null)
+const hasHeartbeat = ref(false)
+
+onMounted(() => {
+  // 초음파 이미지 존재 여부 확인
+  // const img = new Image()
+  // img.onload = () => (ultrasoundSrc.value = '/ultrasound.jpg')
+  // img.onerror = () => (ultrasoundSrc.value = null)
+  // img.src = '/ultrasound.jpg'
+  //
+  // // 심장소리 존재 여부 확인
+  // fetch('/heartbeat.mp3', { method: 'HEAD' })
+  //     .then(res => (hasHeartbeat.value = res.ok))
+  //     .catch(() => (hasHeartbeat.value = false))
+})
+
+function onImageError(event: Event) {
+  const target = event.target as HTMLImageElement
+  target.style.display = 'none'
+}
+</script>
+
+<style scoped>
+/* 카드에 떠 있는 느낌 애니메이션 */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+</style>
