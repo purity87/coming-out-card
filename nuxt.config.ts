@@ -5,5 +5,6 @@ export default defineNuxtConfig({
   pages: true,
   typescript: {
     typeCheck: true
-  }
+  },
+  modules: ['@nuxtjs/tailwindcss']
 })
