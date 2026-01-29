@@ -3,7 +3,30 @@
     <!-- 카드 -->
     <div class="bg-white rounded-[2.5rem] shadow-2xl p-10 max-w-4xl w-full relative animate-float">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <!-- 좌측: 초음파 + 심장소리 -->
+
+        <!-- 상단: 아기 이미지 + 멘트 -->
+        <div class="text-center">
+          <div class="mb-6">
+            <img
+                :src="babyImage"
+                alt="블링이 이미지"
+                class="mx-auto w-56 h-56 object-contain rounded-full"
+                @error="onImageError"
+            />
+          </div>
+
+          <p class="text-gray-600 mb-4 leading-relaxed rounded-lg" >안녕하세요!</p>
+
+          <p class="text-lg font-bold text-gray-800 mb-4 leading-relaxed rounded-lg" v-html="title"></p>
+
+          <p class="text-gray-600 mb-4 leading-relaxed rounded-lg" v-html="mainText"></p>
+
+          <p class="text-gray-600 mb-6 leading-relaxed rounded-lg" v-html="subText"></p>
+
+          <div class="text-sm text-gray-600 leading-relaxed rounded-lg" v-html="footerText"></div>
+        </div>
+
+        <!-- 하단: 초음파 + 심장소리 -->
         <div class="flex flex-col items-center justify-center">
           <p v-if="!ultrasoundSrc && !heartbeatSrc" class="text-gray-400 mb-4">
             이미지/사운드 준비중
@@ -24,25 +47,6 @@
           </div>
         </div>
 
-        <!-- 우측: 아기 이미지 + 멘트 -->
-        <div class="text-center">
-          <div class="mb-6">
-            <img
-                :src="babyImage"
-                alt="블링이 이미지"
-                class="mx-auto w-56 h-56 object-contain rounded-full"
-                @error="onImageError"
-            />
-          </div>
-
-          <h1 class="text-2xl font-bold text-gray-800 mb-4 leading-relaxed rounded-lg" v-html="title"></h1>
-
-          <p class="text-gray-600 mb-4 leading-relaxed rounded-lg" v-html="mainText"></p>
-
-          <p class="text-gray-600 mb-6 leading-relaxed rounded-lg" v-html="subText"></p>
-
-          <div class="text-sm text-gray-400 leading-relaxed rounded-lg" v-html="footerText"></div>
-        </div>
       </div>
     </div>
   </div>
