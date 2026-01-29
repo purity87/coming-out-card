@@ -1,25 +1,45 @@
 <script setup lang="ts">
-import Card from '~/components/Card.vue'
+import { ref, onMounted } from 'vue'
+import QRCode from 'qrcode'
 
-const title = '❤️ 할머니, 할아버지 ❤️'
-const mainText = '저는 <span class="text-purple-600 font-bold">블링</span>이에요.'
-const subText = '무럭무럭 자라서 우리 <span class="font-semibold text-xl">9월</span>에 만나요 💕'
-const footerText = '보고 싶어요. 사랑해요♥️'
-const babyImage = '/bling-baby.png'
+type CardLink = {
+  name: string
+  uri: string
+  qrDataUrl?: string
+}
 
-// 필요 시 옵션
-const ultrasoundSrc = undefined
-const heartbeatSrc = undefined
+// 카드 목록 정의
+const cards = ref<CardLink[]>([
+  { name: '할머니&할아버지', uri: import.meta.env.VITE_CARD_HALMONIM },
+  { name: '이모', uri: import.meta.env.VITE_CARD_IMO },
+  { name: '삼촌', uri: import.meta.env.VITE_CARD_SAMCHON },
+  { name: '이모&이모부', uri: import.meta.env.VITE_CARD_IMO_IMOBU },
+  { name: '고모&고모부', uri: import.meta.env.VITE_CARD_GOMO_GOMOBU },
+  { name: '엄마&아빠 친구들', uri: import.meta.env.VITE_CARD_MAMA_PAPA_FRIENDS }
+])
+
+// QR 생성
+onMounted(() => {
+  cards.value.forEach(async (card) => {
+    try {
+      card.qrDataUrl = await QRCode.toDataURL(import.meta.env.VITE_CARD_APP + card.uri)
+    } catch (err) {
+      console.error('QR 생성 실패:', err)
+    }
+  })
+})
 </script>
 
 <template>
-  <Card
-      :title="title"
-      :mainText="mainText"
-      :subText="subText"
-      :footerText="footerText"
-      :babyImage="babyImage"
-      :ultrasoundSrc="ultrasoundSrc"
-      :heartbeatSrc="heartbeatSrc"
-  />
+  <div class="min-h-screen flex flex-col items-center justify-center gap-10 bg-purple-50 p-10">
+    <h1 class="text-3xl font-bold mb-8 text-purple-700">블링이 카드 QR</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div v-for="card in cards" :key="card.uri" class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-xl">
+        <h2 class="font-bold text-lg text-gray-800 mb-4">{{ card.name }}</h2>
+        <img v-if="card.qrDataUrl" :src="card.qrDataUrl" alt="QR 코드" class="w-40 h-40" />
+        <a :href="card.uri" class="mt-4 text-purple-600 hover:underline">바로보기</a>
+      </div>
+    </div>
+  </div>
 </template>
