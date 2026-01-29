@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Card from '~/components/Card.vue'
 
-const title = '안녕하세요! ❤️ 할머니, 할아버지 ❤️'
+const title = '안녕하세요! ❤️ 이모 ❤️'
 const mainText = '저는 <span class="text-purple-600 font-bold">블링</span>이에요.'
 const subText = '무럭무럭 자라서 우리 <span class="font-semibold text-xl">9월</span>에 만나요 💕'
 const footerText = '보고 싶어요. 사랑해요♥️'
