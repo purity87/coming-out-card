@@ -10,19 +10,19 @@ type CardLink = {
 
 // 카드 목록 정의
 const cards = ref<CardLink[]>([
-  { name: '할머니&할아버지', uri: import.meta.env.VITE_CARD_HALMONIM },
-  { name: '이모', uri: import.meta.env.VITE_CARD_IMO },
-  { name: '삼촌', uri: import.meta.env.VITE_CARD_SAMCHON },
-  { name: '이모&이모부', uri: import.meta.env.VITE_CARD_IMO_IMOBU },
-  { name: '고모&고모부', uri: import.meta.env.VITE_CARD_GOMO_GOMOBU },
-  { name: '엄마&아빠 친구들', uri: import.meta.env.VITE_CARD_MAMA_PAPA_FRIENDS }
+  { name: '할머니&할아버지', uri: '/halmonim' },
+  { name: '이모', uri: '/imo' },
+  { name: '삼촌', uri: '/samchon' },
+  { name: '이모&이모부', uri: '/mama-family' },
+  { name: '고모&고모부', uri: '/papa-family' },
+  { name: '엄마&아빠 친구들', uri: '/ma-pa-friends' }
 ])
 
 // QR 생성
 onMounted(() => {
   cards.value.forEach(async (card) => {
     try {
-      card.qrDataUrl = await QRCode.toDataURL(import.meta.env.VITE_CARD_APP + card.uri)
+      card.qrDataUrl = await QRCode.toDataURL(window.location.origin + card.uri)
     } catch (err) {
       console.error('QR 생성 실패:', err)
     }
