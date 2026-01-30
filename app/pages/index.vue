@@ -15,7 +15,9 @@ const cards = ref<CardLink[]>([
   { name: '삼촌', uri: '/samchon' },
   { name: '이모&이모부', uri: '/mama-family' },
   { name: '고모&고모부', uri: '/papa-family' },
-  { name: '엄마&아빠 친구들', uri: '/ma-pa-friends' }
+  { name: '엄마&아빠 친구들', uri: '/ma-pa-friends' },
+  { name: '형신&상연', uri: '/hs' },
+  { name: '성인&도영', uri: '/si' }
 ])
 
 // QR 생성
