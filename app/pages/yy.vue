@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Card from '~/components/Card.vue'
+import Card from '~/components/CardEn.vue'
 
 const title = '❤️ Aunt Yunyoung & Uncle Max ❤️'
 const mainText = 'Hi! I’m <span class="text-purple-600 font-bold">Bling</span>.'
