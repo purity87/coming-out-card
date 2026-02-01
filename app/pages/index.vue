@@ -12,10 +12,10 @@ type CardLink = {
 const cards = ref<CardLink[]>([
   { name: '할머니&할아버지', uri: '/halmonim' },
   { name: '이모', uri: '/imo' },
-  { name: '삼촌', uri: '/samchon' },
+  { name: '기중 친구들', uri: '/samchon' },
   { name: '이모&이모부', uri: '/mama-family' },
   { name: '고모&고모부', uri: '/papa-family' },
-  { name: '엄마&아빠 친구들', uri: '/ma-pa-friends' },
+  { name: '정화&기중 친구들', uri: '/ma-pa-friends' },
   { name: '형신&상연', uri: '/hs' },
   { name: '성인&도영', uri: '/si' },
   { name: 'Yunyoung&Max', uri: '/yy' }
