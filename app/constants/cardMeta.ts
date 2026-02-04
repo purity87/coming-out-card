@@ -4,15 +4,16 @@ import {
     CARD_MAIN_TEXT,
     CARD_SUB_TEXT,
     CARD_FOOTER_TEXT,
-    CARD_IMAGE, UltraSound_IMAGE
+    CARD_IMAGE,
+    UltraSound_IMAGE
 } from './cardContents'
 
 export const CARD_META = {
     [CARD_URI.HALMONIM]: {
         name: '할머니&할아버지',
         roles: ['할머니', '할아버지'],
-        title: CARD_TITLE.HALMONIM,
-        mainText: CARD_MAIN_TEXT.BLING_KR,
+        title: CARD_TITLE.HALMONIM ?? '❤️ 할머니, 할아버지 ❤️',
+        mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
