@@ -5,7 +5,8 @@ import {
     CARD_SUB_TEXT,
     CARD_FOOTER_TEXT,
     CARD_IMAGE,
-    UltraSound_IMAGE
+    ULTRASOUND_IMAGE,
+    HEARTBEAT_AUDIO
 } from './cardContents'
 
 export const CARD_META = {
@@ -17,8 +18,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.IMO]: {
@@ -29,8 +30,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.SAMCHON]: {
@@ -41,8 +42,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.MAMA_FAMILY]: {
@@ -53,8 +54,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.PAPA_FAMILY]: {
@@ -65,8 +66,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.MA_PA_FRIENDS]: {
@@ -77,8 +78,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.HS]: {
@@ -89,8 +90,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.SI]: {
@@ -101,8 +102,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.YY]: {
@@ -113,8 +114,8 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_EN,
         footerText: CARD_FOOTER_TEXT.LOVE_EN,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
     [CARD_URI.JW]: {
@@ -125,7 +126,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.WAIT_KR,
         babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: UltraSound_IMAGE.DEFAULT,
-        heartbeatAudio: undefined,
+        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 } as const

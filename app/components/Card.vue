@@ -41,8 +41,14 @@
           </div>
 
           <div v-if="heartbeatSrc" class="w-full">
-            <audio controls class="w-full">
-              <source :src="heartbeatSrc" type="audio/mpeg" />
+            <audio
+                v-if="heartbeatSrc"
+                controls
+                muted
+                preload="none"
+                class="w-full"
+            >
+              <source :src="heartbeatSrc" type="audio/mp4" />
             </audio>
           </div>
         </div>

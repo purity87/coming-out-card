@@ -56,6 +56,11 @@ export const CARD_IMAGE = {
     DEFAULT: '/bling-baby.png'
 } as const
 
-export const UltraSound_IMAGE = {
-    DEFAULT: '/5w5d.png',
+export const ULTRASOUND_IMAGE = {
+    DEFAULT: '/image/7w0d.png',
+    FIVE_WEEK: '/image/5w5d.png',
+} as const
+
+export const HEARTBEAT_AUDIO = {
+    DEFAULT: '/audio/7w0d.m4a',
 } as const
