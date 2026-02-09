@@ -32,29 +32,49 @@
             이미지/사운드 준비중
           </p>
 
+          <!-- 📸 초음파 사진 -->
           <div v-if="ultrasoundSrc" class="mb-6">
             <img
                 :src="ultrasoundSrc"
                 alt="초음파 사진"
-                class="w-64 rounded-2xl shadow"
+                class="w-100 rounded-2xl shadow-lg"
             />
           </div>
 
           <!-- ❤️ 심장소리 -->
-          <div v-if="heartbeatSrc" class="w-full text-center">
-            <audio ref="audioRef" preload="none">
+          <div v-if="heartbeatSrc" class="w-full text-center mt-3">
+            <!-- 실제 오디오는 숨김 -->
+            <audio ref="audioRef" preload="auto">
               <source :src="heartbeatSrc" type="audio/mp4" />
             </audio>
 
+            <!-- 버튼 -->
             <button
                 @click="playHeartbeat"
-                class="mt-4 px-6 py-3 rounded-full
-               bg-purple-400 text-white shadow
-               hover:bg-purple-600 transition
-               text-lg font-semibold"
+                class="
+                  inline-flex items-center justify-center gap-2
+                  px-5 py-2
+                  rounded-full
+                  bg-gradient-to-r from-pink-400 to-purple-500
+                  text-white text-md font-semibold
+                  shadow-md
+                  hover:scale-105 active:scale-95
+                  transition-all duration-200
+                "
+                :class="{ 'animate-pulse': isPlaying }"
             >
-              ▶▶ 💓심장소리 듣기
+      <span class="text-xl">
+        {{ isPlaying ? '💓' : '🔊' }}
+      </span>
+              <span>
+        {{ isPlaying ? '재생 중…' : '심장소리 듣기' }}
+      </span>
             </button>
+
+            <!-- 안내 문구 -->
+            <p class="mt-2 text-xs text-gray-500">
+              🔊 볼륨을 조금 높여서 들어주세요
+            </p>
           </div>
         </div>
 
@@ -77,9 +97,20 @@ defineProps<{
 }>()
 
 const audioRef = ref<HTMLAudioElement | null>(null)
+const isPlaying = ref(false)
 
 function playHeartbeat() {
-  audioRef.value?.play()
+  if (!audioRef.value) return
+
+  audioRef.value.volume = 1.0
+  audioRef.value.currentTime = 0
+  audioRef.value.play()
+
+  isPlaying.value = true
+
+  audioRef.value.onended = () => {
+    isPlaying.value = false
+  }
 }
 
 function onImageError(event: Event) {
