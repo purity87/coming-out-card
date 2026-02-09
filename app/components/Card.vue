@@ -40,18 +40,24 @@
             />
           </div>
 
-          <div v-if="heartbeatSrc" class="w-full">
-            <audio
-                v-if="heartbeatSrc"
-                controls
-                muted
-                preload="none"
-                class="w-full"
-            >
+          <!-- ❤️ 심장소리 -->
+          <div v-if="heartbeatSrc" class="w-full text-center">
+            <audio ref="audioRef" preload="none">
               <source :src="heartbeatSrc" type="audio/mp4" />
             </audio>
+
+            <button
+                @click="playHeartbeat"
+                class="mt-4 px-6 py-3 rounded-full
+               bg-purple-400 text-white shadow
+               hover:bg-purple-600 transition
+               text-lg font-semibold"
+            >
+              ▶▶ 💓심장소리 듣기
+            </button>
           </div>
         </div>
+
 
       </div>
     </div>
@@ -59,6 +65,7 @@
 </template>
 
 <script setup lang="ts">
+
 defineProps<{
   title: string
   mainText: string
@@ -68,6 +75,12 @@ defineProps<{
   ultrasoundSrc?: string
   heartbeatSrc?: string
 }>()
+
+const audioRef = ref<HTMLAudioElement | null>(null)
+
+function playHeartbeat() {
+  audioRef.value?.play()
+}
 
 function onImageError(event: Event) {
   const target = event.target as HTMLImageElement
