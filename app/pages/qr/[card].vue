@@ -21,7 +21,7 @@
       />
 
       <!-- 안내 -->
-      <p class="mt-4 text-s text-gray-500 text-center break-all">
+      <p class="mt-4 text-s text-gray-700 text-center break-all">
         QR을 카메라로 인식해주세요.
       </p>
 
@@ -32,6 +32,12 @@
       >
         바로보기 →
       </a>
+
+      <!-- 저작권 -->
+      <p class="mt-10 text-sm text-gray-400 text-right italic tracking-wide">
+        ✨MADE BY. CHOI JEONG HWA ✨
+      </p>
+
     </div>
   </div>
 </template>

@@ -57,7 +57,8 @@ export const CARD_IMAGE = {
 } as const
 
 export const ULTRASOUND_IMAGE = {
-    DEFAULT: '/image/7w0d.png',
+    DEFAULT: '/image/7w5d.png',
+    SEVEN_WEEK: '/image/7w0d.png',
     FIVE_WEEK: '/image/5w5d.png',
 } as const
 
