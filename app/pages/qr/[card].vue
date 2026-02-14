@@ -8,7 +8,7 @@
     <!-- 카드 -->
     <div class="flex flex-col items-center bg-white p-8 rounded-2xl shadow-xl w-80">
       <!-- 카드 이름 / 이름 쿼리 -->
-      <h2 class="font-bold text-lg text-gray-800 mb-4">
+      <h2 class="font-bold text-lg text-black mb-4">
         {{ displayName }}
       </h2>
 
@@ -21,7 +21,7 @@
       />
 
       <!-- 안내 -->
-      <p class="mt-4 text-s text-gray-700 text-center break-all">
+      <p class="mt-4 text-s text-black text-center break-all">
         QR을 카메라로 인식해주세요.
       </p>
 
@@ -34,7 +34,7 @@
       </a>
 
       <!-- 저작권 -->
-      <p class="mt-10 text-sm text-gray-400 text-right italic tracking-wide">
+      <p class="mt-10 text-sm text-black text-right italic tracking-wide">
         ✨MADE BY. CHOI JEONG HWA ✨
       </p>
 
