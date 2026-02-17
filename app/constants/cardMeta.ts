@@ -40,7 +40,7 @@ export const CARD_META = {
         title: CARD_TITLE.SAMCHON,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
@@ -52,7 +52,7 @@ export const CARD_META = {
         title: CARD_TITLE.MAMA_FAMILY,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
@@ -64,7 +64,7 @@ export const CARD_META = {
         title: CARD_TITLE.PAPA_FAMILY,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
@@ -76,7 +76,7 @@ export const CARD_META = {
         title: CARD_TITLE.MA_PA_FRIENDS,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
@@ -88,7 +88,7 @@ export const CARD_META = {
         title: CARD_TITLE.HS,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
@@ -100,7 +100,7 @@ export const CARD_META = {
         title: CARD_TITLE.SI,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
@@ -124,7 +124,7 @@ export const CARD_META = {
         title: CARD_TITLE.JW,
         mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.WAIT_KR,
+        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
