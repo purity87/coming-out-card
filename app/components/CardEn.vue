@@ -93,6 +93,25 @@ defineProps<{
   heartbeatSrc?: string
 }>()
 
+
+const audioRef = ref<HTMLAudioElement | null>(null)
+const isPlaying = ref(false)
+
+function playHeartbeat() {
+  if (!audioRef.value) return
+
+  audioRef.value.volume = 1.0
+  audioRef.value.currentTime = 0
+  audioRef.value.play()
+
+  isPlaying.value = true
+
+  audioRef.value.onended = () => {
+    isPlaying.value = false
+  }
+}
+
+
 function onImageError(event: Event) {
   const target = event.target as HTMLImageElement
   target.style.display = 'none'
