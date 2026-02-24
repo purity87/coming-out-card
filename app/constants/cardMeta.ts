@@ -82,30 +82,6 @@ export const CARD_META = {
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
 
-    [CARD_URI.HS]: {
-        name: '형신&상연',
-        roles: ['이모', '삼촌'],
-        title: CARD_TITLE.HS,
-        mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
-        subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.LOVE_KR,
-        babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
-    },
-
-    [CARD_URI.SI]: {
-        name: '성인&도영',
-        roles: ['이모', '삼촌'],
-        title: CARD_TITLE.SI,
-        mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
-        subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.LOVE_KR,
-        babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
-    },
-
     [CARD_URI.YY]: {
         name: 'Yunyoung&Max',
         roles: ['이모', '삼촌'],
@@ -113,18 +89,6 @@ export const CARD_META = {
         mainText: CARD_MAIN_TEXT.BLING_EN,
         subText: CARD_SUB_TEXT.SEPTEMBER_EN,
         footerText: CARD_FOOTER_TEXT.LOVE_EN,
-        babyImage: CARD_IMAGE.DEFAULT,
-        ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
-    },
-
-    [CARD_URI.JW]: {
-        name: '지원',
-        roles: ['이모'],
-        title: CARD_TITLE.JW,
-        mainText: CARD_MAIN_TEXT.BLING_KR_HELLO,
-        subText: CARD_SUB_TEXT.SEPTEMBER_KR,
-        footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT

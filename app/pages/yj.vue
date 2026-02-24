@@ -2,7 +2,7 @@
 import Card from '~/components/CardEn.vue'
 import {HEARTBEAT_AUDIO, ULTRASOUND_IMAGE} from "~/constants/cardContents";
 
-const title = '❤️Aunt Yunyoung & Uncle Max❤️'
+const title = '❤️Aunt Violet & Uncle Tarak❤️'
 const mainText = 'Hi! I’m <span class="text-purple-600 font-bold">Bling</span>.'
 const subText = 'I’m growing healthy <br/>\ and strong every day!<br/>\<br/>\
   We’ll meet in <span class="font-semibold text-xl">September</span> 💕'
