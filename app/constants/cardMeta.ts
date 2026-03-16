@@ -6,7 +6,7 @@ import {
     CARD_FOOTER_TEXT,
     CARD_IMAGE,
     ULTRASOUND_IMAGE,
-    HEARTBEAT_AUDIO
+    HEARTBEAT_AUDIO, ULTRASOUND_VIDEO
 } from './cardContents'
 
 export const CARD_META = {
@@ -18,6 +18,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
@@ -30,6 +31,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
@@ -42,6 +44,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
@@ -54,6 +57,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
@@ -66,6 +70,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
@@ -78,6 +83,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_KR,
         footerText: CARD_FOOTER_TEXT.LOVE_KR,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },
@@ -90,6 +96,7 @@ export const CARD_META = {
         subText: CARD_SUB_TEXT.SEPTEMBER_EN,
         footerText: CARD_FOOTER_TEXT.LOVE_EN,
         babyImage: CARD_IMAGE.DEFAULT,
+        ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
         heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
     },

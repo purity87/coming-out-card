@@ -5,6 +5,7 @@ import { useCardPage } from '~/composables/useCardPage'
 const {
   card,
   title,
+  ultrasoundVideoSrc,
   ultrasoundSrc,
   heartbeatSrc
 } = useCardPage()
@@ -17,6 +18,7 @@ const {
       :subText="card.subText"
       :footerText="card.footerText"
       :babyImage="card.babyImage"
+      :ultrasoundVideoSrc="ultrasoundVideoSrc"
       :ultrasoundSrc="ultrasoundSrc"
       :heartbeatSrc="heartbeatSrc"
   />

@@ -36,6 +36,7 @@ export function useCardPage() {
     return {
         card,
         title,
+        ultrasoundVideoSrc: card.ultrasoundVideo || undefined,
         ultrasoundSrc: card.ultrasoundImage || undefined,
         heartbeatSrc: card.heartbeatAudio || undefined
     }

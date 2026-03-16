@@ -26,11 +26,24 @@
           <div class="text-sm text-gray-600 leading-relaxed rounded-lg" v-html="footerText"></div>
         </div>
 
-        <!-- 하단: 초음파 + 심장소리 -->
+        <!-- 하단: 초음파 동영상 + 초음파 사진 + 심장소리 -->
         <div class="flex flex-col items-center justify-center">
           <p v-if="!ultrasoundSrc && !heartbeatSrc" class="text-gray-400 mb-4">
             이미지/사운드 준비중
           </p>
+
+          <!-- 초음파 동영상 -->
+        <div v-if="ultrasoundVideoSrc" class="mb-6 w-full max-w-md">
+          <video
+              :src="ultrasoundVideoSrc"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              class="w-full rounded-2xl shadow-lg"
+          ></video>
+        </div>
 
           <!-- 📸 초음파 사진 -->
           <div v-if="ultrasoundSrc" class="mb-6">
@@ -92,6 +105,7 @@ defineProps<{
   subText: string
   footerText: string
   babyImage: string
+  ultrasoundVideoSrc?: string
   ultrasoundSrc?: string
   heartbeatSrc?: string
 }>()

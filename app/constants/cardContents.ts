@@ -56,8 +56,12 @@ export const CARD_IMAGE = {
     DEFAULT: '/bling-baby.png'
 } as const
 
+export const ULTRASOUND_VIDEO = {
+    DEFAULT: '/video/11w5d.mp4',
+} as const
 export const ULTRASOUND_IMAGE = {
-    DEFAULT: '/image/8w6d.png',
+    DEFAULT: '/image/11w5d.png',
+    EIGHT_WEEk_SIX_DAY: '/image/8w6d.png',
     SEVEN_WEEK_FIVE_DAY: '/image/7w5d.png',
     SEVEN_WEEK: '/image/7w0d.png',
     FIVE_WEEK: '/image/5w5d.png',
