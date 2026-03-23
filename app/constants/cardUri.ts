@@ -8,7 +8,7 @@ export const CARD_URI = {
     HS: '/hs',
     SI: '/si',
     YY: '/yy',
-    JW: '/jw'
+    YJ: '/yj'
 } as const
 
 export type CardUri = typeof CARD_URI[keyof typeof CARD_URI]
