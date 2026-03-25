@@ -7,7 +7,8 @@ const {
   title,
   ultrasoundVideoSrc,
   ultrasoundSrc,
-  heartbeatSrc
+  heartbeatSrc,
+  albumImages
 } = useCardPage()
 </script>
 
@@ -21,5 +22,6 @@ const {
       :ultrasoundVideoSrc="ultrasoundVideoSrc"
       :ultrasoundSrc="ultrasoundSrc"
       :heartbeatSrc="heartbeatSrc"
+      :albumImages="albumImages"
   />
 </template>

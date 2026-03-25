@@ -92,7 +92,48 @@
         </div>
 
 
+        <!-- 📷 성장 앨범 -->
+        <div v-if="albumImages?.length" class="w-full mt-6">
+
+          <p class="text-sm font-semibold text-gray-500 mb-2 text-center">
+            📷 성장 앨범
+          </p>
+
+          <div class="flex gap-3 overflow-x-auto pb-2">
+            <img
+                v-for="(img, i) in albumImages"
+                :key="img"
+                :src="img"
+                class="
+                  w-60 h-60
+                  object-cover
+                  rounded-xl
+                  shadow
+                  flex-shrink-0
+                  cursor-pointer
+                  hover:scale-105
+                  transition
+                "
+                @click="openViewer(i)"
+            />
+          </div>
+
+        </div>
+
+
       </div>
+    </div>
+
+    <!-- ⭐ 앨범 전체화면 -->
+    <div
+        v-if="viewerOpen && albumImages"
+        class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+        @click="closeViewer"
+    >
+      <img
+          :src="albumImages[currentIndex]"
+          class="max-h-[90vh] max-w-[90vw] rounded-2xl"
+      />
     </div>
   </div>
 </template>
@@ -108,6 +149,7 @@ defineProps<{
   ultrasoundVideoSrc?: string
   ultrasoundSrc?: string
   heartbeatSrc?: string
+  albumImages?: readonly string[]
 }>()
 
 const audioRef = ref<HTMLAudioElement | null>(null)
@@ -130,6 +172,19 @@ function playHeartbeat() {
 function onImageError(event: Event) {
   const target = event.target as HTMLImageElement
   target.style.display = 'none'
+}
+
+/* ⭐ 앨범 viewer */
+const viewerOpen = ref(false)
+const currentIndex = ref(0)
+
+function openViewer(i:number){
+  currentIndex.value = i
+  viewerOpen.value = true
+}
+
+function closeViewer(){
+  viewerOpen.value = false
 }
 </script>
 

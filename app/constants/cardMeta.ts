@@ -5,8 +5,10 @@ import {
     CARD_SUB_TEXT,
     CARD_FOOTER_TEXT,
     CARD_IMAGE,
+    ULTRASOUND_VIDEO,
     ULTRASOUND_IMAGE,
-    HEARTBEAT_AUDIO, ULTRASOUND_VIDEO
+    HEARTBEAT_AUDIO ,
+    ALBUM_IMAGES
 } from './cardContents'
 
 export const CARD_META = {
@@ -20,7 +22,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.IMO]: {
@@ -33,7 +36,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.SAMCHON]: {
@@ -46,7 +50,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.MAMA_FAMILY]: {
@@ -59,7 +64,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.PAPA_FAMILY]: {
@@ -72,7 +78,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.MA_PA_FRIENDS]: {
@@ -85,7 +92,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.HS]: {
@@ -98,7 +106,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.SI]: {
@@ -111,7 +120,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.YY]: {
@@ -124,7 +134,8 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 
     [CARD_URI.YJ]: {
@@ -137,6 +148,7 @@ export const CARD_META = {
         babyImage: CARD_IMAGE.DEFAULT,
         ultrasoundVideo: ULTRASOUND_VIDEO.DEFAULT,
         ultrasoundImage: ULTRASOUND_IMAGE.DEFAULT,
-        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT
+        heartbeatAudio: HEARTBEAT_AUDIO.DEFAULT,
+        albumImages: ALBUM_IMAGES,
     },
 } as const

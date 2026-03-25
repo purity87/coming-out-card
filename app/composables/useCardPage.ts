@@ -38,6 +38,7 @@ export function useCardPage() {
         title,
         ultrasoundVideoSrc: card.ultrasoundVideo || undefined,
         ultrasoundSrc: card.ultrasoundImage || undefined,
-        heartbeatSrc: card.heartbeatAudio || undefined
+        heartbeatSrc: card.heartbeatAudio || undefined,
+        albumImages: card.albumImages || [],
     }
 }

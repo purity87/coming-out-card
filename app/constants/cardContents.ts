@@ -70,3 +70,5 @@ export const ULTRASOUND_IMAGE = {
 export const HEARTBEAT_AUDIO = {
     DEFAULT: '/audio/7w0d.m4a',
 } as const
+
+export const ALBUM_IMAGES = Object.values(ULTRASOUND_IMAGE) as readonly string[]
