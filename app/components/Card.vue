@@ -124,7 +124,7 @@
       </div>
     </div>
 
-    <!-- ⭐ 앨범 전체화면 -->
+    <!-- 앨범 전체화면 -->
     <div
         v-if="viewerOpen && albumImages"
         class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
@@ -133,7 +133,7 @@
       <img
           :src="albumImages[currentIndex]"
           class="max-h-[90vh] max-w-[90vw] rounded-2xl"
-      />
+          alt=""/>
     </div>
   </div>
 </template>
@@ -174,7 +174,7 @@ function onImageError(event: Event) {
   target.style.display = 'none'
 }
 
-/* ⭐ 앨범 viewer */
+/* 앨범 viewer */
 const viewerOpen = ref(false)
 const currentIndex = ref(0)
 
