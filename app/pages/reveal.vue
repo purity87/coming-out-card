@@ -1,12 +1,8 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-rose-50 via-fuchsia-50 to-sky-50 px-4 pt-10 pb-14 font-nanum">
     <div class="mx-auto mt-2 w-full max-w-md">
-      <!-- 메인 카드 -->
       <div class="relative overflow-hidden rounded-[40px] bg-white shadow-2xl">
-        <!-- 상단 헤더 -->
-        <div
-            class="relative overflow-hidden bg-gradient-to-r from-pink-100 via-purple-50 to-blue-100 px-6 pt-12 pb-8 text-center"
-        >
+        <div class="relative overflow-hidden bg-gradient-to-r from-pink-100 via-purple-50 to-blue-100 px-6 pt-12 pb-8 text-center">
           <div class="pointer-events-none absolute inset-0 overflow-hidden">
             <div class="bubble bubble-1" />
             <div class="bubble bubble-2" />
@@ -27,10 +23,8 @@
           </p>
         </div>
 
-        <!-- 본문 -->
         <div class="px-5 py-6">
           <div class="flex flex-col gap-5">
-            <!-- 소개 카드 -->
             <div class="rounded-[28px] bg-gradient-to-br from-purple-50 to-pink-50 p-5">
               <div
                   class="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-purple-600 shadow-sm"
@@ -40,11 +34,15 @@
               </div>
 
               <h2 class="mb-3 text-2xl font-bold leading-snug text-gray-800">
-                블링이는 <span class="text-sky-500">왕자님</span>일까? <span class="text-pink-500">공주님</span>일까?
+                블링이는 <span class="text-sky-500">왕자님</span>일까?
+                <span class="text-pink-500">공주님</span>일까?
               </h2>
+
+              <p v-if="stats.total > 0" class="text-sm text-gray-500">
+                현재까지 총 {{ stats.total }}명이 예상에 참여했어요.
+              </p>
             </div>
 
-            <!-- 리빌 영역 -->
             <div
                 class="rounded-[32px] border p-5 shadow-xl transition-all duration-500"
                 :class="revealed ? revealPanelClass : 'border-purple-100 bg-gradient-to-b from-white to-purple-50'"
@@ -52,7 +50,6 @@
               <div class="text-center">
                 <p v-if="!revealed" class="mb-3 text-sm text-gray-500">Ready?</p>
 
-                <!-- 닫힌 상태 -->
                 <div v-if="!revealed" class="relative flex h-[260px] items-center justify-center overflow-hidden">
                   <div class="balloon-scene scale-[0.92]">
                     <div class="balloon balloon-main" />
@@ -71,7 +68,6 @@
                   </div>
                 </div>
 
-                <!-- 열린 상태 -->
                 <div v-else class="relative flex h-[280px] items-center justify-center overflow-hidden">
                   <div class="burst-ring" />
 
@@ -97,45 +93,93 @@
                     >
                       {{ revealShort }}
                     </div>
-
                   </div>
                 </div>
 
-                <!-- 상태 박스 -->
-                <div
-                    class="mt-4 rounded-[24px] border p-5"
-                    :class="revealed ? resultBoxClass : 'border-purple-100 bg-purple-50/70'"
-                >
-                  <template v-if="!revealed">
-                    <p class="mb-2 text-sm text-gray-500">아직 비밀이에요 🤍</p>
+                <div class="mt-4">
+                  <div
+                      v-if="!voteSaved"
+                      class="rounded-[24px] border border-purple-100 bg-white p-5"
+                  >
+                    <p class="mb-2 text-sm text-gray-500">공개 전에 먼저 예상해 주세요 ✨</p>
                     <p class="text-lg font-bold text-gray-800">
-                      아래 버튼을 눌러 성별을 확인해 보세요.
+                      블링이는 딸일까요, 아들일까요?
                     </p>
-                  </template>
 
-                  <template v-else>
-                    <p class="mb-2 text-sm" :class="resultTextSubClass">
-                      짜잔! 우리 블링이는
+                    <div class="mt-4 grid grid-cols-2 gap-3">
+                      <button
+                          type="button"
+                          class="rounded-full border border-pink-200 bg-pink-50 px-4 py-3 font-semibold text-pink-500 transition hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+                          :disabled="voteLoading"
+                          @click="submitVote('girl')"
+                      >
+                        {{ voteLoading ? '저장 중...' : '🩷 딸 같아요' }}
+                      </button>
+
+                      <button
+                          type="button"
+                          class="rounded-full border border-blue-200 bg-blue-50 px-4 py-3 font-semibold text-blue-500 transition hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+                          :disabled="voteLoading"
+                          @click="submitVote('boy')"
+                      >
+                        {{ voteLoading ? '저장 중...' : '🩵 아들 같아요' }}
+                      </button>
+                    </div>
+
+                    <p class="mt-3 text-xs text-gray-400">
+                      한 번 선택하면 같은 브라우저에서는 선택이 기억돼요.
                     </p>
-                    <p class="text-3xl font-extrabold" :class="resultTextClass">
-                      {{ revealLabel }}
-                    </p>
-                    <p class="mt-3 text-sm text-gray-700">
-                      {{ revealMessage }}
-                    </p>
-                  </template>
+                  </div>
+
+                  <div
+                      v-else
+                      class="rounded-[24px] border p-5"
+                      :class="revealed ? resultBoxClass : 'border-purple-100 bg-purple-50/70'"
+                  >
+                    <template v-if="!revealed">
+                      <p class="mb-2 text-sm text-gray-500">투표 완료 🤍</p>
+                      <p class="text-lg font-bold text-gray-800">
+                        내 예상은 {{ voteLabel }}
+                      </p>
+                      <p class="mt-3 text-sm text-gray-600">
+                        아래 버튼을 눌러 성별을 확인해 보세요.
+                      </p>
+                    </template>
+
+                    <template v-else>
+                      <p class="mb-2 text-sm" :class="resultTextSubClass">
+                        짜잔! 우리 블링이는
+                      </p>
+                      <p class="text-3xl font-extrabold" :class="resultTextClass">
+                        {{ revealLabel }}
+                      </p>
+                      <p class="mt-3 text-sm text-gray-700">
+                        {{ revealMessage }}
+                      </p>
+
+                      <p class="mt-4 text-sm font-semibold text-gray-700">
+                        내 예상: {{ voteLabel }}
+                        <span v-if="isVoteCorrect" class="ml-2 text-emerald-500">정답이에요 🎉</span>
+                        <span v-else class="ml-2 text-gray-500">다음엔 맞혀봐요 🤭</span>
+                      </p>
+                    </template>
+                  </div>
                 </div>
 
-                <!-- 버튼 -->
                 <div class="mt-5 flex flex-col items-center gap-3">
                   <button
                       v-if="!revealed"
                       type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 px-6 py-3 font-semibold text-white shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
+                      class="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold text-white shadow-md transition-all duration-200 active:scale-95"
+                      :class="
+                      voteSaved
+                        ? 'bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 hover:scale-105'
+                        : 'cursor-not-allowed bg-gray-300'
+                    "
                       @click="handleReveal"
                   >
-                    <span class="text-xl">🎈</span>
-                    <span>풍선 열어보기</span>
+                    <span class="text-xl">{{ revealLoading ? '⏳' : '🎈' }}</span>
+                    <span>{{ revealLoading ? '불러오는 중...' : '풍선 열어보기' }}</span>
                   </button>
 
                   <button
@@ -148,22 +192,36 @@
                     <span>다시 보기</span>
                   </button>
 
+                  <NuxtLink
+                      to="/chart"
+                      class="inline-flex items-center justify-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-5 py-3 text-sm font-semibold text-purple-600 shadow-sm transition hover:scale-105"
+                  >
+                    <span>📊</span>
+                    <span>투표 결과 차트 보기</span>
+                  </NuxtLink>
+
                   <p class="text-xs text-gray-400">
-                    {{ revealed ? '언제든 다시 열어볼 수 있어요' : '버튼을 누르면 풍선이 터지며 공개돼요' }}
+                    {{
+                      revealed
+                          ? '언제든 다시 열어볼 수 있어요'
+                          : voteSaved
+                              ? '버튼을 누르면 풍선이 터지며 공개돼요'
+                              : '먼저 딸/아들 예상 투표를 해주세요'
+                    }}
                   </p>
                 </div>
               </div>
             </div>
 
-            <!-- 하단 포토 영역 -->
-            <div v-if="revealed" class="rounded-[28px] border border-purple-100 bg-gradient-to-r from-pink-50 via-white to-blue-50 p-5">
+            <div
+                v-if="revealed"
+                class="rounded-[28px] border border-purple-100 bg-gradient-to-r from-pink-50 via-white to-blue-50 p-5"
+            >
               <p class="mb-4 text-center text-sm font-semibold text-gray-500">
                 📷 초음파 사진
               </p>
 
-              <div
-                  class="overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-sm"
-              >
+              <div class="overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-sm">
                 <img
                     v-if="photoSrc"
                     :src="photoSrc"
@@ -174,7 +232,7 @@
                     v-else
                     class="flex aspect-[4/5] items-center justify-center text-sm text-gray-400"
                 >
-                  사진 1장
+                  public 폴더나 외부 이미지 URL을 photoSrc에 넣어주세요
                 </div>
               </div>
             </div>
@@ -183,70 +241,215 @@
       </div>
 
       <p class="mt-6 text-center text-xs text-gray-400">
-        reveal.vue · pastel purple / pink / blue theme
+        reveal page · pastel purple / pink / blue theme
       </p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 type GenderType = 'boy' | 'girl'
 
-const revealType = ref<GenderType>('girl')
-const revealed = ref(false)
+const VISITOR_TOKEN_KEY = 'bling-visitor-token'
+const MY_VOTE_KEY = 'bling-my-vote'
 
-const handleReveal = () => {
-  revealed.value = true
+const config = useRuntimeConfig()
+const apiBase = config.public.apiBase || '/api'
+
+const revealed = ref(false)
+const revealType = ref<GenderType | null>(null)
+
+const selectedVote = ref<GenderType | null>(null)
+const voteSaved = ref(false)
+const voteLoading = ref(false)
+const revealLoading = ref(false)
+
+const stats = ref({
+  boy: 0,
+  girl: 0,
+  total: 0,
+  boyRate: 0,
+  girlRate: 0,
+})
+
+const photoSrc = ref('')
+
+const getVisitorToken = () => {
+  const saved = localStorage.getItem(VISITOR_TOKEN_KEY)
+  if (saved) return saved
+
+  const newToken = crypto.randomUUID()
+  localStorage.setItem(VISITOR_TOKEN_KEY, newToken)
+  return newToken
+}
+
+const getMyVote = (): GenderType | null => {
+  const value = localStorage.getItem(MY_VOTE_KEY)
+  return value === 'boy' || value === 'girl' ? value : null
+}
+
+const setMyVote = (vote: GenderType) => {
+  localStorage.setItem(MY_VOTE_KEY, vote)
+}
+
+const fetchStats = async () => {
+  try {
+    const result = await $fetch<{
+      boy: number
+      girl: number
+      total: number
+      boyRate: number
+      girlRate: number
+    }>(`${apiBase}/vote-stats`)
+
+    stats.value = result
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+onMounted(async () => {
+  const savedVote = getMyVote()
+
+  if (savedVote) {
+    selectedVote.value = savedVote
+    voteSaved.value = true
+  }
+
+  await fetchStats()
+})
+
+const submitVote = async (vote: GenderType) => {
+  if (voteLoading.value) return
+
+  try {
+    voteLoading.value = true
+
+    const result = await $fetch<{
+      ok: boolean
+      myVote: GenderType
+      stats: {
+        boy: number
+        girl: number
+        total: number
+        boyRate: number
+        girlRate: number
+      }
+    }>(`${apiBase}/vote`, {
+      method: 'POST',
+      body: {
+        choice: vote,
+        visitorToken: getVisitorToken(),
+      },
+    })
+
+    selectedVote.value = vote
+    voteSaved.value = true
+    setMyVote(vote)
+    stats.value = result.stats
+  } catch (error: any) {
+    alert(error?.data?.statusMessage || '투표 저장 중 오류가 발생했어요.')
+  } finally {
+    voteLoading.value = false
+  }
+}
+
+const handleReveal = async () => {
+  if (!voteSaved.value) {
+    alert('먼저 투표해 주세요 💌')
+    return
+  }
+
+  try {
+    revealLoading.value = true
+
+    const result = await $fetch<{ gender: GenderType }>(`${apiBase}/reveal`)
+    revealType.value = result.gender
+    revealed.value = true
+  } catch (error: any) {
+    alert(error?.data?.statusMessage || '성별을 불러오지 못했어요.')
+  } finally {
+    revealLoading.value = false
+  }
 }
 
 const resetReveal = () => {
   revealed.value = false
 }
 
+const voteLabel = computed(() => {
+  if (selectedVote.value === 'boy') return '아들 💙'
+  if (selectedVote.value === 'girl') return '딸 💖'
+  return ''
+})
+
+const isVoteCorrect = computed(() => {
+  return !!(
+      revealed.value &&
+      selectedVote.value &&
+      revealType.value &&
+      selectedVote.value === revealType.value
+  )
+})
+
 const revealLabel = computed(() => {
+  if (!revealType.value) return ''
   return revealType.value === 'boy' ? '왕자님이에요 💙' : '공주님이에요 💖'
 })
 
 const revealShort = computed(() => {
+  if (!revealType.value) return ''
   return revealType.value === 'boy' ? 'It’s a Boy!' : 'It’s a Girl!'
 })
 
 const revealEmoji = computed(() => {
+  if (!revealType.value) return '🎉'
   return revealType.value === 'boy' ? '🩵' : '🩷'
 })
 
 const revealMessage = computed(() => {
+  if (!revealType.value) return ''
   return revealType.value === 'boy'
       ? '작고 소중한 우리 아들, 건강하게 만나자.'
       : '사랑스러운 우리 딸, 예쁘게 잘 만나자.'
 })
 
 const revealPanelClass = computed(() => {
-  return revealType.value === 'boy'
-      ? 'border-blue-100 bg-gradient-to-b from-blue-50 to-sky-100'
-      : 'border-pink-100 bg-gradient-to-b from-pink-50 to-rose-100'
+  if (revealType.value === 'boy') {
+    return 'border-blue-100 bg-gradient-to-b from-blue-50 to-sky-100'
+  }
+
+  if (revealType.value === 'girl') {
+    return 'border-pink-100 bg-gradient-to-b from-pink-50 to-rose-100'
+  }
+
+  return 'border-purple-100 bg-gradient-to-b from-white to-purple-50'
 })
 
 const resultBoxClass = computed(() => {
-  return revealType.value === 'boy'
-      ? 'border-blue-100 bg-blue-50'
-      : 'border-pink-100 bg-pink-50'
+  if (revealType.value === 'boy') return 'border-blue-100 bg-blue-50'
+  if (revealType.value === 'girl') return 'border-pink-100 bg-pink-50'
+  return 'border-purple-100 bg-purple-50/70'
 })
 
 const resultTextClass = computed(() => {
-  return revealType.value === 'boy' ? 'text-blue-500' : 'text-pink-500'
+  if (revealType.value === 'boy') return 'text-blue-500'
+  if (revealType.value === 'girl') return 'text-pink-500'
+  return 'text-gray-700'
 })
 
 const resultTextSubClass = computed(() => {
-  return revealType.value === 'boy' ? 'text-blue-400' : 'text-pink-400'
+  if (revealType.value === 'boy') return 'text-blue-400'
+  if (revealType.value === 'girl') return 'text-pink-400'
+  return 'text-gray-500'
 })
 
 const pillClass = computed(() => {
-  return revealType.value === 'boy'
-      ? 'bg-white text-blue-500'
-      : 'bg-white text-pink-500'
+  if (revealType.value === 'boy') return 'bg-white text-blue-500'
+  if (revealType.value === 'girl') return 'bg-white text-pink-500'
+  return 'bg-white text-gray-700'
 })
 
 const confettiStyle = (n: number) => {
@@ -269,11 +472,13 @@ const confettiStyle = (n: number) => {
     background: colors[n % colors.length],
   }
 }
-
-const photoSrc = ref('')
 </script>
 
 <style scoped>
+.font-nanum {
+  font-family: 'NanumSquareRound', sans-serif;
+}
+
 @keyframes bounceSoft {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
