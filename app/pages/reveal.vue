@@ -34,8 +34,9 @@
               </div>
 
               <h2 class="mb-3 text-2xl font-bold leading-snug text-gray-800">
-                블링이는 <span class="text-sky-500">왕자님</span>일까?
-                <span class="text-pink-500">공주님</span>일까?
+                👶🏻블링이는<span class="text-sm relative -top-3">✨</span><br/>
+                <span class="text-sky-500">왕자님</span><span class="text-xl" >일까?  </span>
+                <span class="text-pink-500"> 공주님</span><span class="text-xl" >일까?</span>
               </h2>
 
               <p v-if="stats.total > 0" class="text-sm text-gray-500">
@@ -142,7 +143,7 @@
                         내 예상은 {{ voteLabel }}
                       </p>
                       <p class="mt-3 text-sm text-gray-600">
-                        아래 버튼을 눌러 성별을 확인해 보세요.
+                        아래 버튼을 눌러 <br/> 성별을 확인해 보세요.
                       </p>
                     </template>
 

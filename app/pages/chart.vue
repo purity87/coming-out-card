@@ -46,11 +46,11 @@
 
       <div class="mt-8 flex justify-center">
         <NuxtLink
-            to="/"
+            to="/reveal"
             class="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 font-semibold text-gray-700 shadow-md transition hover:scale-105"
         >
           <span>🎈</span>
-          <span>리빌 페이지로 돌아가기</span>
+          <span>젠더리빌 페이지로 돌아가기</span>
         </NuxtLink>
       </div>
     </div>
