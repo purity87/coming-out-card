@@ -233,7 +233,7 @@
                     v-else
                     class="flex aspect-[4/5] items-center justify-center text-sm text-gray-400"
                 >
-                  public 폴더나 외부 이미지 URL을 photoSrc에 넣어주세요
+
                 </div>
               </div>
             </div>
@@ -275,7 +275,7 @@ const stats = ref({
   girlRate: 0,
 })
 
-const photoSrc = ref('')
+const photoSrc = ref('/image/gender.png')
 
 const getVisitorToken = () => {
   const saved = localStorage.getItem(VISITOR_TOKEN_KEY)

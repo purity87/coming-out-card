@@ -12,8 +12,10 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.102.1",
     "chart.js": "^4.5.1",
+    "loader": "^2.1.1",
     "nuxt": "^4.3.0",
     "qrcode": "^1.5.4",
+    "simple-git": "^3.36.0",
     "vue": "^3.5.27",
     "vue-chartjs": "^5.3.3",
     "vue-router": "^4.6.4"
