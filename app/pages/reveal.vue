@@ -114,7 +114,7 @@
                           :disabled="voteLoading"
                           @click="submitVote('girl')"
                       >
-                        {{ voteLoading ? '저장 중...' : '🩷 딸 같아요' }}
+                        {{ voteLoading ? '저장 중...' : '🩷 공주님 🩷' }}
                       </button>
 
                       <button
@@ -123,7 +123,7 @@
                           :disabled="voteLoading"
                           @click="submitVote('boy')"
                       >
-                        {{ voteLoading ? '저장 중...' : '🩵 아들 같아요' }}
+                        {{ voteLoading ? '저장 중...' : '🩵 왕자님 🩵' }}
                       </button>
                     </div>
 
