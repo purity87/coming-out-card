@@ -104,7 +104,7 @@
                   >
                     <p class="mb-2 text-sm text-gray-500">공개 전에 먼저 예상해 주세요 ✨</p>
                     <p class="text-lg font-bold text-gray-800">
-                      블링이는 공주님일까요, 왕자님일까요?
+                      블링이는 공주님일까요? <br/> 왕자님일까요?
                     </p>
 
                     <div class="mt-4 grid grid-cols-2 gap-3">
