@@ -35,8 +35,8 @@
 
               <h2 class="mb-3 text-2xl font-bold leading-snug text-gray-800">
                 👶🏻블링이는<span class="text-sm relative -top-3">✨</span><br/>
+                <span class="text-pink-500"> 공주님</span><span class="text-xl" >일까? </span>
                 <span class="text-sky-500">왕자님</span><span class="text-xl" >일까?  </span>
-                <span class="text-pink-500"> 공주님</span><span class="text-xl" >일까?</span>
               </h2>
 
               <p v-if="stats.total > 0" class="text-sm text-gray-500">
@@ -104,7 +104,7 @@
                   >
                     <p class="mb-2 text-sm text-gray-500">공개 전에 먼저 예상해 주세요 ✨</p>
                     <p class="text-lg font-bold text-gray-800">
-                      블링이는 딸일까요, 아들일까요?
+                      블링이는 공주님일까요, 왕자님일까요?
                     </p>
 
                     <div class="mt-4 grid grid-cols-2 gap-3">
@@ -114,7 +114,7 @@
                           :disabled="voteLoading"
                           @click="submitVote('girl')"
                       >
-                        {{ voteLoading ? '저장 중...' : '🩷 공주님 🩷' }}
+                        {{ voteLoading ? '저장 중...' : '🩷 공주님 ' }}
                       </button>
 
                       <button
@@ -123,7 +123,7 @@
                           :disabled="voteLoading"
                           @click="submitVote('boy')"
                       >
-                        {{ voteLoading ? '저장 중...' : '🩵 왕자님 🩵' }}
+                        {{ voteLoading ? '저장 중...' : '🩵 왕자님 ' }}
                       </button>
                     </div>
 
