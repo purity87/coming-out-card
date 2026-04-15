@@ -154,9 +154,6 @@
                       <p class="text-3xl font-extrabold" :class="resultTextClass">
                         {{ revealLabel }}
                       </p>
-                      <p class="mt-3 text-sm text-gray-700">
-                        {{ revealMessage }}
-                      </p>
 
                       <p class="mt-4 text-sm font-semibold text-gray-700">
                         내 예상: {{ voteLabel }}
@@ -408,13 +405,6 @@ const revealShort = computed(() => {
 const revealEmoji = computed(() => {
   if (!revealType.value) return '🎉'
   return revealType.value === 'boy' ? '🩵' : '🩷'
-})
-
-const revealMessage = computed(() => {
-  if (!revealType.value) return ''
-  return revealType.value === 'boy'
-      ? '작고 소중한 우리 아들, 건강하게 만나자.'
-      : '사랑스러운 우리 딸, 예쁘게 잘 만나자.'
 })
 
 const revealPanelClass = computed(() => {
