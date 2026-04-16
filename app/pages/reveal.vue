@@ -190,13 +190,13 @@
                     <span>다시 보기</span>
                   </button>
 
-                  <NuxtLink
-                      to="/chart"
-                      class="inline-flex items-center justify-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-5 py-3 text-sm font-semibold text-purple-600 shadow-sm transition hover:scale-105"
-                  >
-                    <span>📊</span>
-                    <span>투표 결과 차트 보기</span>
-                  </NuxtLink>
+<!--                  <NuxtLink-->
+<!--                      to="/chart"-->
+<!--                      class="inline-flex items-center justify-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-5 py-3 text-sm font-semibold text-purple-600 shadow-sm transition hover:scale-105"-->
+<!--                  >-->
+<!--                    <span>📊</span>-->
+<!--                    <span>투표 결과 차트 보기</span>-->
+<!--                  </NuxtLink>-->
 
                   <p class="text-xs text-gray-400">
                     {{
